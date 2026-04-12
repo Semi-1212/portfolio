@@ -1,7 +1,7 @@
 import { Header } from "./components/Header"
 import { Hero } from "./components/Hero"
-import { ReelSection } from "./components/ReelSection"
-import { WorkSection } from "./components/WorkSection"
+import { SkillsSection } from "./components/SkillsSection"
+import { ExperienceSection } from "./components/ExperienceSection"
 import { AboutSection } from "./components/AboutSection"
 import { ContactSection } from "./components/ContactSection"
 import { Footer } from "./components/Footer"
@@ -12,8 +12,8 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <ReelSection />
-        <WorkSection />
+        <SkillsSection />
+        <ExperienceSection />
         <AboutSection />
         <ContactSection />
       </main>

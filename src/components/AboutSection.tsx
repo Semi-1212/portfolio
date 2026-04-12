@@ -1,21 +1,21 @@
 import { motion } from "framer-motion"
-import { Clapperboard, Palette, Volume2 } from "lucide-react"
+import { Server, ShieldCheck, Workflow } from "lucide-react"
 
-const skills = [
+const pillars = [
   {
-    icon: Clapperboard,
-    title: "Editorial",
-    body: "Pacing, structure, and clarity — from assembly to fine cut.",
+    icon: Server,
+    title: "Infrastructure",
+    body: "Stable servers, storage, and services — patched, backed up, and sized for real workload.",
   },
   {
-    icon: Palette,
-    title: "Color",
-    body: "Consistent looks, skin tones, and deliverables-ready passes.",
+    icon: ShieldCheck,
+    title: "Security & compliance",
+    body: "Identity hardening, least privilege, logging, and repeatable controls aligned with policy.",
   },
   {
-    icon: Volume2,
-    title: "Sound",
-    body: "Dialogue polish, ambience beds, and simple sound design.",
+    icon: Workflow,
+    title: "Automation & process",
+    body: "Scripts and runbooks that reduce toil: onboarding, reporting, and recurring maintenance.",
   },
 ] as const
 
@@ -37,44 +37,43 @@ export function AboutSection() {
               About me
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Editing with intent
+              Operations you can trust
             </h2>
             <p className="mt-5 text-base leading-relaxed text-white/55">
-              I&apos;m Seid Barsido, a video editor working across commercial,
-              narrative, and branded pieces. I partner with directors, producers,
-              and clients to shape footage into a clear story — pacing that holds
-              attention, cuts that feel motivated, and sound and picture that
-              support the idea instead of distracting from it.
+              I am a system administrator focused on practical outcomes: fewer
+              outages, faster recovery, and IT that scales with the business. I
+              work closely with stakeholders to translate requirements into
+              architecture, standards, and support models that hold up under
+              pressure.
             </p>
             <p className="mt-4 text-base leading-relaxed text-white/55">
-              I keep projects moving with organized timelines, predictable
-              handoffs, and exports tailored to your platform — whether that is
-              broadcast, web, or social. I work remotely with teams worldwide,
-              using professional editing, color, and finishing workflows in tools
-              such as DaVinci Resolve, Premiere Pro, and After Effects.
+              Whether the stack is mostly on-prem, hybrid Microsoft, or a mix of
+              Linux and Windows, I prioritize clear documentation, measured
+              change windows, and communication during incidents so everyone knows
+              what is happening and when it is resolved.
             </p>
           </motion.div>
 
           <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-            {skills.map((s, i) => (
+            {pillars.map((p, i) => (
               <motion.div
-                key={s.title}
+                key={p.title}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.45, delay: i * 0.08 }}
                 className="rounded-2xl border border-white/[0.08] bg-[#0f0f12] p-5"
               >
-                <s.icon
+                <p.icon
                   className="h-6 w-6 text-[var(--color-accent)]"
                   strokeWidth={1.5}
                   aria-hidden
                 />
                 <h3 className="mt-4 font-display text-lg font-bold text-white">
-                  {s.title}
+                  {p.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/50">
-                  {s.body}
+                  {p.body}
                 </p>
               </motion.div>
             ))}

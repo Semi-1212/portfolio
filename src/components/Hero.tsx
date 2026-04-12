@@ -11,8 +11,8 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 opacity-[0.55]"
         aria-hidden
       >
-        <div className="absolute -left-1/4 top-0 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle_at_center,color-mix(in_oklab,var(--color-accent)_38%,transparent),transparent_65%)] blur-3xl sm:h-[36rem] sm:w-[36rem]" />
-        <div className="absolute -right-1/4 bottom-0 h-[22rem] w-[22rem] rounded-full bg-[radial-gradient(circle_at_center,rgba(120,150,255,0.18),transparent_65%)] blur-3xl" />
+        <div className="absolute -left-1/4 top-0 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle_at_center,color-mix(in_oklab,var(--color-accent)_32%,transparent),transparent_65%)] blur-3xl sm:h-[36rem] sm:w-[36rem]" />
+        <div className="absolute -right-1/4 bottom-0 h-[22rem] w-[22rem] rounded-full bg-[radial-gradient(circle_at_center,rgba(120,150,255,0.2),transparent_65%)] blur-3xl" />
         <div
           className="absolute inset-0 opacity-[0.12]"
           style={{
@@ -30,7 +30,7 @@ export function Hero() {
           transition={{ delay: 0.05, duration: 0.5 }}
           className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)]"
         >
-          Video editor · Color · Motion
+          System administrator · Infrastructure · Operations
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
@@ -38,8 +38,8 @@ export function Hero() {
           transition={{ delay: 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl"
         >
-          Stories cut tight.
-          <span className="block text-white/55">Grade that breathes.</span>
+          Reliable systems.
+          <span className="block text-white/55">Documented change.</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 14 }}
@@ -47,8 +47,9 @@ export function Hero() {
           transition={{ delay: 0.22, duration: 0.5 }}
           className="mt-6 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg"
         >
-          Commercial, narrative, and branded edits — pacing-first cutting, clean
-          online, and sound that supports the picture.
+          I design, maintain, and improve server, identity, and hybrid cloud
+          environments — with security baselines, monitoring, and automation so
+          teams can work without friction.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -57,20 +58,20 @@ export function Hero() {
           className="mt-10 flex flex-wrap items-center gap-4"
         >
           <a
-            href="#reel"
+            href="#skills"
             className="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-[#1a1208] transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
-            Watch reel
+            View skills
           </a>
           <a
-            href="#work"
+            href="#experience"
             className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-white/90 transition-colors hover:border-white/25 hover:bg-white/[0.06]"
           >
-            Browse work
+            Experience
           </a>
         </motion.div>
         <motion.a
-          href="#reel"
+          href="#skills"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.5 }}
