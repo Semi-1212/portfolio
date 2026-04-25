@@ -1,4 +1,43 @@
-/** Edit this file to match your client’s real experience, stack, and links. */
+/** Site copy and links — edit to match Seid’s real profiles, certs, and history. */
+
+export type SocialLink = {
+  id: string
+  label: string
+  href: string
+}
+
+/** Footer, hero, and JSON-LD `sameAs` — single source for profile URLs. */
+export const socialLinks: SocialLink[] = [
+  { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/seidb/" },
+]
+
+export const profile = {
+  fullName: "Seid Barsido",
+  shortTitle: "System Administrator",
+  email: "seidba8@gmail.com",
+  phone: "0910245494",
+} as const
+
+/** Placeholder PDF; replace `public/seid-barsido-resume.pdf` with the real export. */
+export const resume = {
+  fileName: "seid-barsido-resume.pdf",
+  label: "Download résumé",
+} as const
+
+export function resumeHref(): string {
+  return `/${resume.fileName}`
+}
+
+export type Certification = {
+  id: string
+  name: string
+  issuer: string
+  year: string
+  credentialId?: string
+  verifyUrl?: string
+}
+
+export const certifications: Certification[] = []
 
 export type ExperienceItem = {
   id: string
@@ -6,6 +45,8 @@ export type ExperienceItem = {
   period: string
   title: string
   summary: string
+  /** Outcome-focused bullets for scanning (metrics when you have them). */
+  outcomes: string[]
   tags: string[]
 }
 
@@ -16,71 +57,72 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Operating systems & directory",
+    title: "System administration",
     items: [
-      "Windows Server",
-      "Linux (RHEL / Ubuntu)",
-      "Active Directory",
-      "Group Policy",
-      "DNS / DHCP",
+      "System installation and configuration",
+      "Technical support and troubleshooting",
+      "User account and access management",
+      "Documentation and reporting",
     ],
   },
   {
-    title: "Cloud & virtualization",
+    title: "Networking & infrastructure",
     items: [
-      "Microsoft Azure",
-      "VMware / Hyper-V",
-      "Entra ID (Azure AD)",
-      "Backup & DR planning",
+      "Network installation and infrastructure management",
+      "Virtual network configuration",
+      "Computer hardware and software maintenance",
+      "Secure system configuration",
     ],
   },
   {
-    title: "Networking & security",
+    title: "Security & resilience",
     items: [
-      "Firewalls & VPN",
-      "Zero-trust concepts",
-      "Patch management",
-      "Endpoint protection",
+      "System security and data protection",
+      "Network and endpoint security",
+      "Patch and vulnerability management",
+      "Backup and disaster recovery",
     ],
   },
   {
-    title: "Automation & operations",
+    title: "Tools & operations",
     items: [
       "PowerShell",
       "Bash",
-      "Microsoft Intune / MDM",
-      "Monitoring (e.g. Zabbix, SCOM, cloud-native)",
-      "Ticketing & ITIL workflows",
+      "Windows Server",
+      "Linux",
+      "Security awareness training",
+      "SOP development and knowledge sharing",
     ],
   },
 ]
 
 export const experienceItems: ExperienceItem[] = [
   {
-    id: "corp-infra",
-    organization: "Enterprise IT Services",
-    period: "2022 — Present",
+    id: "poessa-it-specialist",
+    organization: "Private Organization Employees Social Security Administration (POESSA)",
+    period: "Mar 2023 — Present",
+    title: "IT Specialist",
+    summary:
+      "Lead infrastructure operations across system installation, maintenance, and function testing for hardware and software in a government organization environment.",
+    outcomes: [
+      "Configured and maintained virtual network environments to support secure and stable service delivery.",
+      "Designed and implemented platform improvements that increased operational reliability for internal teams.",
+      "Created standard operating procedures and delivered regular technology and cyber security seminars to colleagues and partners.",
+    ],
+    tags: ["System Administration", "Virtual Networks", "Security", "Documentation"],
+  },
+  {
+    id: "poessa-system-admin",
+    organization: "Private Organization Employees Social Security Administration (POESSA)",
+    period: "Jan 2020 — Mar 2023",
     title: "System Administrator",
     summary:
-      "Own day-to-day operations for on-prem and hybrid infrastructure: user lifecycle in AD/Entra, server builds and patching, storage and backup checks, and incident response with clear runbooks and documentation.",
-    tags: ["Windows Server", "Azure", "AD", "PowerShell"],
-  },
-  {
-    id: "msp",
-    organization: "Regional MSP",
-    period: "2019 — 2022",
-    title: "IT Support Engineer → Systems Administrator",
-    summary:
-      "Supported SMB clients across ticketing and projects: migrating file shares, deploying standardized images, hardening endpoints, and rolling out Microsoft 365 with conditional access baselines.",
-    tags: ["M365", "Intune", "Networking", "Support"],
-  },
-  {
-    id: "projects",
-    organization: "Selected initiatives",
-    period: "Ongoing",
-    title: "Infrastructure & automation projects",
-    summary:
-      "Examples you can tailor: automated patching reports, self-service account workflows, monitoring dashboards for disk and backup health, and documentation in a team wiki or Confluence.",
-    tags: ["Automation", "Documentation", "Monitoring"],
+      "Managed core systems, user access, and endpoint reliability with a strong focus on security and business continuity.",
+    outcomes: [
+      "Handled installation, configuration, troubleshooting, and ongoing support for enterprise hardware and software.",
+      "Strengthened system security and data protection practices, including response to cyber-attack risks targeting organizational information.",
+      "Supported backup and disaster recovery readiness through routine checks, reporting, and access control discipline.",
+    ],
+    tags: ["Technical Support", "Endpoint Security", "Access Management", "DR/Backup"],
   },
 ]

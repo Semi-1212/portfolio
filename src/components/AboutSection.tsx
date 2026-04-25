@@ -5,17 +5,17 @@ const pillars = [
   {
     icon: Server,
     title: "Infrastructure",
-    body: "Stable servers, storage, and services — patched, backed up, and sized for real workload.",
+    body: "System installation, configuration, and technical troubleshooting to keep services stable day to day.",
   },
   {
     icon: ShieldCheck,
     title: "Security & compliance",
-    body: "Identity hardening, least privilege, logging, and repeatable controls aligned with policy.",
+    body: "System security, endpoint protection, patch and vulnerability management, and data protection controls.",
   },
   {
     icon: Workflow,
     title: "Automation & process",
-    body: "Scripts and runbooks that reduce toil: onboarding, reporting, and recurring maintenance.",
+    body: "Clear SOPs, reporting, and user support processes that improve consistency across operations.",
   },
 ] as const
 
@@ -37,20 +37,20 @@ export function AboutSection() {
               About me
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Operations you can trust
+              Practical IT operations with a security-first mindset
             </h2>
             <p className="mt-5 text-base leading-relaxed text-white/55">
-              I am a system administrator focused on practical outcomes: fewer
-              outages, faster recovery, and IT that scales with the business. I
-              work closely with stakeholders to translate requirements into
-              architecture, standards, and support models that hold up under
-              pressure.
+              I am a system administrator and IT specialist with 6+ years of
+              experience in a government organization environment. My work covers
+              hardware and software installation, infrastructure support, and
+              secure operations that help teams deliver services without
+              disruption.
             </p>
             <p className="mt-4 text-base leading-relaxed text-white/55">
-              Whether the stack is mostly on-prem, hybrid Microsoft, or a mix of
-              Linux and Windows, I prioritize clear documentation, measured
-              change windows, and communication during incidents so everyone knows
-              what is happening and when it is resolved.
+              I focus on virtual network configuration, access management, backup
+              and disaster recovery readiness, and cyber security awareness. I
+              also create documentation and share knowledge through internal SOPs
+              and seminars so IT practices stay consistent and reliable.
             </p>
           </motion.div>
 

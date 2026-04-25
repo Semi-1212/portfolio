@@ -31,6 +31,18 @@ export function ExperienceCard({ item, index }: Props) {
       <p className="mt-4 text-sm leading-relaxed text-white/55 sm:text-base">
         {item.summary}
       </p>
+      {item.outcomes.length > 0 ? (
+        <ul className="mt-5 list-none space-y-2.5 border-l-2 border-[var(--color-accent)]/35 pl-4">
+          {item.outcomes.map((line) => (
+            <li
+              key={line}
+              className="text-sm leading-relaxed text-white/65 sm:text-[0.9375rem]"
+            >
+              {line}
+            </li>
+          ))}
+        </ul>
+      ) : null}
       <ul className="mt-5 flex flex-wrap gap-2" aria-label="Technologies">
         {item.tags.map((tag) => (
           <li

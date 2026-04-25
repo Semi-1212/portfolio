@@ -19,12 +19,12 @@ export function SkillsSection() {
             Technical profile
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Skills & tooling
+            Technical skills & tools
           </h2>
           <p className="mt-4 text-base leading-relaxed text-white/55">
-            Breadth across on-prem, cloud, identity, networking, and day-two
-            operations — the stack most organizations rely on for stable IT
-            delivery.
+            Core strengths from day-to-day system administration: infrastructure
+            support, security operations, and practical tooling used to keep
+            services reliable.
           </p>
         </motion.div>
 

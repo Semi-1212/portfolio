@@ -1,5 +1,13 @@
 import { motion } from "framer-motion"
-import { ArrowDown } from "lucide-react"
+import { ArrowDown, Code2, Link2, Share2 } from "lucide-react"
+import { resumeHref, resume, socialLinks } from "../data/content"
+
+function SocialIcon({ id }: { id: string }) {
+  const cls = "h-4 w-4"
+  if (id === "linkedin") return <Share2 className={cls} aria-hidden />
+  if (id === "github") return <Code2 className={cls} aria-hidden />
+  return <Link2 className={cls} aria-hidden />
+}
 
 export function Hero() {
   return (
@@ -55,7 +63,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.32, duration: 0.45 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
+          className="mt-10 flex flex-wrap items-center gap-3 sm:gap-4"
         >
           <a
             href="#skills"
@@ -69,13 +77,44 @@ export function Hero() {
           >
             Experience
           </a>
+          <a
+            href={resumeHref()}
+            download
+            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-white/90 transition-colors hover:border-[var(--color-accent)]/40 hover:bg-white/[0.06]"
+          >
+            {resume.label}
+          </a>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.42, duration: 0.45 }}
+          className="mt-8 flex flex-wrap items-center gap-4 border-t border-white/[0.06] pt-8"
+        >
+          <span className="text-xs font-semibold uppercase tracking-wider text-white/35">
+            Profiles
+          </span>
+          <div className="flex flex-wrap gap-3">
+            {socialLinks.map((s) => (
+              <a
+                key={s.id}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-white/70 transition-colors hover:border-white/20 hover:text-white"
+              >
+                <SocialIcon id={s.id} />
+                {s.label}
+              </a>
+            ))}
+          </div>
         </motion.div>
         <motion.a
           href="#skills"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.5 }}
-          className="mt-16 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-white/40 transition-colors hover:text-white/60"
+          className="mt-12 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-white/40 transition-colors hover:text-white/60"
         >
           <ArrowDown className="h-4 w-4" aria-hidden />
           Scroll

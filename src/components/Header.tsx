@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
-
-const links = [
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
-] as const
+import { certifications, profile } from "../data/content"
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const links = [
+    { href: "#skills", label: "Skills" },
+    ...(certifications.length > 0
+      ? [{ href: "#certifications", label: "Certifications" }]
+      : []),
+    { href: "#experience", label: "Experience" },
+    { href: "#about", label: "About" },
+    { href: "#contact", label: "Contact" },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -43,10 +46,10 @@ export function Header() {
           href="#top"
           className="font-display text-lg font-bold tracking-tight text-white sm:text-xl"
         >
-          Seid Barsido
+          {profile.fullName}
         </a>
 
-        <nav className="hidden items-center gap-10 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
           {links.map((l) => (
             <a
               key={l.href}
@@ -60,7 +63,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-white md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-white lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
@@ -72,7 +75,7 @@ export function Header() {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-white/[0.06] bg-[#070708]/95 px-5 py-6 backdrop-blur-xl md:hidden"
+          className="border-t border-white/[0.06] bg-[#070708]/95 px-5 py-6 backdrop-blur-xl lg:hidden"
         >
           <div className="flex flex-col gap-4">
             {links.map((l) => (
